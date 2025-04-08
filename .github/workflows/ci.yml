@@ -1,0 +1,30 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build the application
+        run: npm run build
+
+      - name: Check for successful completion
+        run: |
+          echo "Good to go!"
+        if: ${{ success() }}
+
+      - name: Handle errors
+        run: |
+          echo "There is an issue with your code!"
+        if: ${{ failure() }}
