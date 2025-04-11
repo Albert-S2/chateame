@@ -7,10 +7,13 @@ export default function LoginForm() {
     const [password, setPassword] = useState('');
     const router = useRouter();
 
+    const validUsername = process.env.NEXT_PUBLIC_USERNAME;
+    const validPassword = process.env.NEXT_PUBLIC_PASSWORD;
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Logging in with:', {myName, password});
-        if (myName === 'admin' && password === 'admin') {
+        if (myName === validUsername && password === validPassword) {
             console.log('Login successful');
             router.push('/chatpage');
         }
