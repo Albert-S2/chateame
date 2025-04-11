@@ -7,6 +7,7 @@ export default function LoginForm() {
     const [password, setPassword] = useState('');
     const router = useRouter();
 
+    
     const validUsername = process.env.NEXT_PUBLIC_USERNAME;
     const validPassword = process.env.NEXT_PUBLIC_PASSWORD;
 
@@ -16,9 +17,9 @@ export default function LoginForm() {
         if (myName === validUsername && password === validPassword) {
             console.log('Login successful');
             router.push('/chatpage');
-        }
-        else {
+        } else {
             console.log('Invalid login');
+            alert('Invalid username or password');
         }
     };
     
