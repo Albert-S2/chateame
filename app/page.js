@@ -1,4 +1,6 @@
 import styles from "./page.module.css";
+import LoginForm from "./components/login";
+
 
 export default function Home() {
   return (
@@ -6,7 +8,9 @@ export default function Home() {
       <main className={styles.main}>
         <h1>Chateame</h1>
         <h2>Version 1.2</h2>
-        <div className={styles.ctas}>
+        <div>
+          <h3>Login</h3>
+          <LoginForm />
         </div>
       </main>
     </div>
