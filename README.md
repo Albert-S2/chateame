@@ -37,4 +37,11 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 - Build Login Page
 - Add login keys to Vercel
 
+## Next Steps
+
+- Register with OpenAI
+- Connect OpenAI keys
+- Build first version of chat with OpenAI responses
+
+
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
