@@ -5,6 +5,7 @@ export default function ChatPage() {
       <div>
         <main>
           <h1>Chatpage</h1>
+          <h3>Your Level</h3>
         </main>
       </div>
     );
