@@ -25,7 +25,10 @@ export async function POST(req) {
     // Add a system prompt to guide the AI
     const systemMessage = {
       role: "system",
-      content: "You are my colleague who helps me to practice my conversations in Spanish. I am currently on my B2 Spanish Level and I want to improve my Spanish. When answering, first re-write my words in correct Spanish using Spanish letters as well, then answer my question starting with '>>'  in a nice friendly way like a student from Spain. Please use popular language that will enhance my skills with time. But each of your answers shouldn't be longer than 400 letters.",
+      content:
+      "1. Read my sentence and correct it in spanish. 2. use '>>' and then answer my question in a friendly way like a student from Spain. Please use only vocabulary not higher than B2 level and the answer should not be longer than 400 letters."
+      
+      // "You are my colleague who helps me to practice my conversations in Spanish. I am currently on my B2 Spanish Level and I want to improve my Spanish. When answering, first correct my sentence in correct Spanish (fix my kistakes), then answer my question starting with '>>'  in a nice friendly way like a student from Spain. Please use popular language that will enhance my skills with time. But each of your answers shouldn't be longer than 400 letters.",
     };
 
     // Ensure the systemMessage is the first message
@@ -33,7 +36,7 @@ export async function POST(req) {
 
     // Call the OpenAI API with the updated messages
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o", // Use a valid model name
+      model: "gpt-3.5-turbo", // Use a valid model name
       messages: updatedMessages,
     });
 
