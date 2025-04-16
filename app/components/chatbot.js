@@ -76,7 +76,7 @@ export default function Chatbot() {
 
   return (
     <div className="chatbot-container">
-      <h1 className="chatbot-title">Chat en Español</h1>
+      <h1 className="chatbot-title">Chate a me!</h1>
 
       <div className="chatbot-messages">
         {messages.map((msg, index) => (
