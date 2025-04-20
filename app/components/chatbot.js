@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './chatbot.css'; // Import your CSS file for styling
 
+
 export default function Chatbot() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
@@ -76,7 +77,7 @@ export default function Chatbot() {
 
   return (
     <div className="chatbot-container">
-      <h1 className="chatbot-title">Chate a me!</h1>
+      <h1 className="chatbot-title">¡Chaté a me!</h1>
 
       <div className="chatbot-messages">
         {messages.map((msg, index) => (
@@ -86,7 +87,7 @@ export default function Chatbot() {
               msg.role === "user" ? "chatbot-message-user" : "chatbot-message-assistant"
             }`}
           >
-            <strong>{msg.role === "user" ? "Tú" : "Pedro"}:</strong> {msg.content}
+            <strong>{msg.role === "user" ? "Tú" : "¡Chaté a me!"}:</strong> {msg.content}
           </div>
         ))}
         {/* Invisible div to ensure scrolling to the bottom */}
