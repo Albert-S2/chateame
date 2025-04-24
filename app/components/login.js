@@ -28,7 +28,6 @@ export default function LoginForm() {
         <div className="login-page">
             <div className="login-container">
                 <h1 className="login-title">¡Chaté a me!</h1>
-                <h2 className="login-subtitle">Login</h2>
                 <form onSubmit={handleSubmit} className="login-form">
                     <div className="login-field">
                         <label className="login-label">Name:</label>

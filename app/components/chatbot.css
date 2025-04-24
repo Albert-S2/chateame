@@ -18,7 +18,7 @@
 
 .chatbot-title {
   text-align: center;
-  font-size: 45px; 
+  font-size: 36px; 
   color: #333333; 
   margin-bottom: 15px;
   font-weight: bold;
@@ -44,14 +44,13 @@
   font-size: 18px; 
   line-height: 1.8; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* Sans-serif font */
-  border-style: solid;
-  border-color: #ede8e8;
+  border-style: 1px solid #ede8e8;
 }
 
 
 .chatbot-message-user {
   background-color: #eae9e9; 
-  border-radius: 30px; 
+  border-radius: 8px; 
   align-self: flex-end;
   color: #000000; 
 }
@@ -60,7 +59,7 @@
 .chatbot-message-assistant {
   background-color: #ffffff; 
   align-self: flex-start;
-  border-radius: 30px;
+  border-radius: 8px;
   color: #000000; 
 }
 
@@ -83,14 +82,13 @@
   flex: 1;
   padding: 15px; 
   border: 1px solid #e0e0e0; 
-  border-radius: 8px; 
-  font-size: 18px; 
+  font-size: 16px; 
   outline: none;
   background-color: #ffffff; 
   color: #333333; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* Sans-serif font */
   transition: border-color 0.3s ease;
-  border-radius: 30px;
+  border-radius: 8px;
 }
 
 .chatbot-input::placeholder {
@@ -111,10 +109,10 @@
   border: none;
   border-radius: 8px; 
   cursor: pointer;
-  font-size: 18px; 
+  font-size: 16px; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* Sans-serif font */
   transition: background-color 0.3s ease;
-  border-radius: 30px;
+  border-radius: 8px;
 }
 
 .chatbot-submit-button:disabled {
@@ -126,21 +124,41 @@
   background-color: #000000; 
 }
 
+.chatbot-buttons {
+  display: flex;
+  flex-direction: row; /* Arrange buttons horizontally */
+  justify-content: center; /* Center buttons horizontally */
+  gap: 15px; /* Add space between buttons */
+  margin-top: 15px;
+}
+
+.chatbot-reset-button,
+.chatbot-logout-button {
+  width: 150px; /* Make buttons the same width */
+  padding: 12px 20px; /* Adjust padding for consistency */
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s ease;
+}
 
 .chatbot-reset-button {
-  padding: 15px 25px; 
-  background-color: #f44336; 
-  color: #ffffff; 
+  background-color: #ed5b51; /* Red for reset */
+  color: #ffffff;
   border: none;
-  border-radius: 8px; 
-  cursor: pointer;
-  font-size: 18px; 
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* Sans-serif font */
-  transition: background-color 0.3s ease;
-  align-self: center;
-  border-radius: 30px;
 }
 
 .chatbot-reset-button:hover {
-  background-color: #d32f2f; 
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.chatbot-logout-button {
+  background-color: #5c5c5c; /* Gray for logout */
+  color: #ffffff;
+  border: none;
+}
+
+.chatbot-logout-button:hover {
+  background-color: #000000; /* Black on hover */
 }

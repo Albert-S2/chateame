@@ -22,25 +22,18 @@
   color: #333333; /* Dark gray text */
 }
 
-/* Title and subtitle */
 .login-title {
   text-align: center;
-  font-size: 36px; /* Slightly smaller than chatbot title */
-  color: #333333; /* Dark gray text */
-  margin-bottom: 10px;
+  font-size: 36px; 
+  color: #333333; 
+  margin: 40px 0px;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 2px; /* Similar spacing to chatbot title */
-  font-family: 'Courier New', Courier, monospace; /* Typewriter-style font */
+  letter-spacing: 2px; 
+  font-family: 'Courier New', Courier, monospace; 
 }
 
-.login-subtitle {
-  text-align: center;
-  font-size: 24px; /* Smaller subtitle */
-  color: #555555; /* Medium gray text */
-  margin-bottom: 20px;
-  font-weight: 500;
-}
+
 
 /* Form */
 .login-form {
@@ -90,7 +83,7 @@
   background-color: #5c5c5c; /* Dark gray button */
   color: #ffffff; /* White text */
   border: none;
-  border-radius: 30px; /* Rounded corners */
+  border-radius: 8px; /* Rounded corners */
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
