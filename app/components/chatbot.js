@@ -1,12 +1,14 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation'; // Import useRouter for navigation
 import './chatbot.css';
-
 
 export default function Chatbot() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const router = useRouter(); // Initialize useRouter for navigation
 
   // Reference to the messages container
   const messagesEndRef = useRef(null);
@@ -75,6 +77,10 @@ export default function Chatbot() {
     window.location.reload(); // Reloads the page
   }
 
+  function handleLogout() {
+    router.push('/'); // Redirect to the login page
+  }
+
   return (
     <div className="chatbot-container">
       <h1 className="chatbot-title">¡Chaté a me!</h1>
@@ -109,9 +115,14 @@ export default function Chatbot() {
         </button>
       </form>
 
-      <button onClick={handleReset} className="chatbot-reset-button">
-        Reset
-      </button>
-    </div>
+      <div className="chatbot-buttons">
+        <button onClick={handleReset} className="chatbot-reset-button">
+          Reset
+        </button>
+        <button onClick={handleLogout} className="chatbot-logout-button">
+          Logout
+        </button>
+      </div>
+      </div>
   );
 }
