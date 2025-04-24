@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* Page container */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login container */
+.login-container {
+  max-width: 400px; /* Smaller width for login form */
+  margin: 0 auto;
+  padding: 30px;
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #ffffff; /* White background */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form elements */
+  color: #333333; /* Dark gray text */
+}
+
+/* Title and subtitle */
+.login-title {
+  text-align: center;
+  font-size: 36px; /* Slightly smaller than chatbot title */
+  color: #333333; /* Dark gray text */
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Similar spacing to chatbot title */
+  font-family: 'Courier New', Courier, monospace; /* Typewriter-style font */
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 24px; /* Smaller subtitle */
+  color: #555555; /* Medium gray text */
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between fields */
+}
+
+/* Input fields */
+.login-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.login-label {
+  font-size: 14px;
+  color: #333333; /* Dark gray text */
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #333333;
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.login-input::placeholder {
+  color: #888888; /* Medium gray placeholder */
+}
+
+.login-input:focus {
+  border-color: #000000; /* Black border on focus */
+  outline: none;
+}
+
+/* Submit button */
+.login-submit-button {
+  padding: 12px 20px;
+  background-color: #5c5c5c; /* Dark gray button */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.login-submit-button:disabled {
+  background-color: #cccccc; /* Light gray for disabled button */
+  cursor: not-allowed;
+}
+
+.login-submit-button:hover:not(:disabled) {
+  background-color: #000000; /* Black on hover */
+}
