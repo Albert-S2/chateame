@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import './chatbot.css'; // Import your CSS file for styling
+import './chatbot.css';
 
 
 export default function Chatbot() {
