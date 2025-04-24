@@ -14,15 +14,12 @@ jobs:
         run: npm install
 
       - name: Build the application
-        run: npm run build
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: npm run build
 
       # - name: Run tests
       #   run: npm test
-
-      - name: Build the application
-        run: npm run build
 
       - name: Check for successful completion
         run: |
