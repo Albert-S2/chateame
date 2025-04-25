@@ -5,19 +5,19 @@ const openai = new OpenAI({
 });
 
 export async function POST(req) {
-  if (!process.env.OPENAI_API_KEY) {
-    return new Response(
-      JSON.stringify({ error: "OpenAI API key is not configured" }),
-      { status: 500 }
-    );
-  }
-
   try {
-    const { message } = await req.json(); // Expecting a single user message
+    const { message, level } = await req.json(); // Expecting both message and level
 
     if (!message || typeof message !== "string") {
       return new Response(
         JSON.stringify({ error: "Invalid request: 'message' must be a string" }),
+        { status: 400 }
+      );
+    }
+
+    if (!level || typeof level !== "string") {
+      return new Response(
+        JSON.stringify({ error: "Invalid request: 'level' must be a string" }),
         { status: 400 }
       );
     }
@@ -41,7 +41,7 @@ export async function POST(req) {
     // Second role: Provide a conversational response
     const conversationSystemMessage = {
       role: "system",
-      content: "You are a young adult from Spain, who like to have onlice conversation. thank to that user can practice its spanish with you. Respond to the user's input in a conversational and friendly way, using vocabulary suitable for a B2 Spanish level. Keep your response under 400 characters.",
+      content: `You are a young adult from Spain who likes to have online conversations. Your goal is to help the user practice their Spanish. Respond to the user's input in a conversational and friendly way, using vocabulary suitable for a ${level} Spanish level. Keep your response under 400 characters.`,
     };
 
     const conversationCompletion = await openai.chat.completions.create({
