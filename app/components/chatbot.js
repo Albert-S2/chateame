@@ -7,6 +7,7 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedLevel, setSelectedLevel] = useState("A1"); // Default level
 
   const router = useRouter();
   const messagesEndRef = useRef(null);
@@ -20,6 +21,10 @@ export default function Chatbot() {
 
   function handleChange(event) {
     setInput(event.target.value);
+  }
+
+  function handleLevelClick(level) {
+    setSelectedLevel(level); // Update the selected level
   }
 
   async function handleSubmit(event) {
@@ -41,7 +46,7 @@ export default function Chatbot() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({ message: userMessage, level: selectedLevel }), // Include level in the request
       });
 
       if (!response.ok) {
@@ -89,6 +94,19 @@ export default function Chatbot() {
   return (
     <div className="chatbot-container">
       <h1 className="chatbot-title">¡Chaté a me!</h1>
+
+      {/* Level Selection Boxes */}
+      <div className="level-selection">
+        {["A1", "A2", "B1", "B2", "C1", "C2"].map((level) => (
+          <div
+            key={level}
+            className={`level-box ${selectedLevel === level ? "selected" : ""}`}
+            onClick={() => handleLevelClick(level)}
+          >
+            {level}
+          </div>
+        ))}
+      </div>
 
       <div className="chatbot-messages">
         {messages.map((msg, index) => (
