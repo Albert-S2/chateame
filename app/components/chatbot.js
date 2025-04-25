@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import { useRouter } from 'next/navigation'; // Import useRouter for navigation
+import { useRouter } from 'next/navigation';
 import './chatbot.css';
 
 export default function Chatbot() {
@@ -8,9 +8,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const router = useRouter(); // Initialize useRouter for navigation
-
-  // Reference to the messages container
+  const router = useRouter();
   const messagesEndRef = useRef(null);
 
   // Scroll to the bottom of the messages container
@@ -24,7 +22,7 @@ export default function Chatbot() {
     setInput(event.target.value);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     const userMessage = input.trim();
@@ -39,38 +37,45 @@ export default function Chatbot() {
     setMessages(updatedMessages);
     setIsLoading(true);
 
-    fetch("/api/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messages: updatedMessages }),
-    })
-      .then((res) => {
-        console.log("Response status:", res.status);
-        if (!res.ok) {
-          throw new Error(`Failed to fetch response from the server. Status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        const assistantMessage = {
-          role: "assistant",
-          content: data.reply,
-        };
-
-        setMessages((prevMessages) => prevMessages.concat([assistantMessage]));
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        setMessages((prevMessages) =>
-          prevMessages.concat({
-            role: "assistant",
-            content: "Lo siento, hubo un problema al procesar tu mensaje.",
-          })
-        );
-      })
-      .finally(() => {
-        setIsLoading(false);
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage }),
       });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch response. Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      const correctedMessage = {
+        role: "assistant",
+        type: "correction",
+        content: `${data.corrected}`,
+      };
+
+      const assistantMessage = {
+        role: "assistant",
+        type: "response",
+        content: data.reply,
+      };
+
+      setMessages((prevMessages) =>
+        prevMessages.concat([correctedMessage, assistantMessage])
+      );
+    } catch (error) {
+      console.error("Error:", error);
+      setMessages((prevMessages) =>
+        prevMessages.concat({
+          role: "assistant",
+          content: "Lo siento, hubo un problema al procesar tu mensaje.",
+        })
+      );
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   function handleReset() {
@@ -93,7 +98,17 @@ export default function Chatbot() {
               msg.role === "user" ? "chatbot-message-user" : "chatbot-message-assistant"
             }`}
           >
-            <strong>{msg.role === "user" ? "Tú" : "¡Chaté a me!"}:</strong> {msg.content}
+            {msg.type === "correction" ? (
+              <div className="correction-message">
+                <em>
+                  {msg.content}
+                </em>
+              </div>
+            ) : (
+              <>
+                <strong>{msg.role === "user" ? "Tú" : "¡Chaté a me!"}:</strong> {msg.content}
+              </>
+            )}
           </div>
         ))}
         {/* Invisible div to ensure scrolling to the bottom */}
@@ -120,9 +135,9 @@ export default function Chatbot() {
           Reset
         </button>
         <button onClick={handleLogout} className="chatbot-logout-button">
-          Logout
+          Log out
         </button>
       </div>
-      </div>
+    </div>
   );
 }
