@@ -13,35 +13,53 @@ export async function POST(req) {
   }
 
   try {
-    const { messages } = await req.json();
+    const { message } = await req.json(); // Expecting a single user message
 
-    if (!messages || !Array.isArray(messages)) {
+    if (!message || typeof message !== "string") {
       return new Response(
-        JSON.stringify({ error: "Invalid request: 'messages' must be an array" }),
+        JSON.stringify({ error: "Invalid request: 'message' must be a string" }),
         { status: 400 }
       );
     }
 
-    // Add a system prompt to guide the AI
-    const systemMessage = {
+    // First role: Correct the user's sentence
+    const correctionSystemMessage = {
       role: "system",
-      content:
-      "1. Read my sentence and correct it in spanish writing using Italics. 2. use '>>' and then answer my question in a friendly way like a student from Spain. Please use only vocabulary not higher than B2 level and the answer should not be longer than 400 letters."
-      
-      // "You are my colleague who helps me to practice my conversations in Spanish. I am currently on my B2 Spanish Level and I want to improve my Spanish. When answering, first correct my sentence in correct Spanish (fix my kistakes), then answer my question starting with '>>'  in a nice friendly way like a student from Spain. Please use popular language that will enhance my skills with time. But each of your answers shouldn't be longer than 400 letters.",
+      content: "You are a Spanish grammar expert. Correct the following sentence in proper Spanish without adding anything else.",
     };
 
-    // Ensure the systemMessage is the first message
-    const updatedMessages = [systemMessage, ...messages];
-
-    // Call the OpenAI API with the updated messages
-    const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo", // Use a valid model name
-      messages: updatedMessages,
+    const correctionCompletion = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [
+        correctionSystemMessage,
+        { role: "user", content: message },
+      ],
     });
 
+    const correctedSentence = correctionCompletion.choices[0].message.content;
+
+    // Second role: Provide a conversational response
+    const conversationSystemMessage = {
+      role: "system",
+      content: "You are a young adult from Spain, who like to have onlice conversation. thank to that user can practice its spanish with you. Respond to the user's input in a conversational and friendly way, using vocabulary suitable for a B2 Spanish level. Keep your response under 400 characters.",
+    };
+
+    const conversationCompletion = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [
+        conversationSystemMessage,
+        { role: "user", content: message },
+      ],
+    });
+
+    const conversationalResponse = conversationCompletion.choices[0].message.content;
+
+    // Return both responses
     return new Response(
-      JSON.stringify({ reply: completion.choices[0].message.content }),
+      JSON.stringify({
+        corrected: correctedSentence,
+        reply: conversationalResponse,
+      }),
       { status: 200 }
     );
   } catch (error) {

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
 .chatbot-container {
-  max-width: 900px; 
+  width: 90%;
   max-height: 600px;
   margin: 50px auto;
   padding: 30px; 
@@ -43,10 +43,9 @@
   border-radius: 8px; 
   font-size: 18px; 
   line-height: 1.8; 
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* Sans-serif font */
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   border-style: 1px solid #ede8e8;
 }
-
 
 .chatbot-message-user {
   background-color: #eae9e9; 
@@ -144,13 +143,13 @@
 }
 
 .chatbot-reset-button {
-  background-color: #ed5b51; /* Red for reset */
+  background-color: #d6827c; /* Red for reset */
   color: #ffffff;
   border: none;
 }
 
 .chatbot-reset-button:hover {
-  background-color: #d32f2f; /* Darker red on hover */
+  background-color: #ba133a; /* Darker red on hover */
 }
 
 .chatbot-logout-button {
