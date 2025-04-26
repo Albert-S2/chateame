@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Tech Stack: 
+-> Page has been deployed with Vercel. (www.chateame.vercel.app) 
+-> Next.js / React
+-> JavaScript + HTML + CSS
+
 
 ## Getting Started
 
@@ -36,12 +41,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 - Add GitHub Action
 - Build Login Page
 - Add login keys to Vercel
+- Registered with OpenAI
+- Connected OpenAI keys
+- Built chat with OpenAI responses
 
 ## Next Steps
 
-- Register with OpenAI
-- Connect OpenAI keys
-- Build first version of chat with OpenAI responses
-
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
