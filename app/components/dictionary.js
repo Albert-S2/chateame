@@ -5,21 +5,21 @@ import './dictionary.css';
 
 export default function Dictionary() {
 
+    function handleSubmit(event) {
+        event.preventDefault ()
+    }
     return (
     <div className="dictionary-container">
         <h2 className="Dictionary-title">Diccionario</h2>
+        <form className="dictionary-form" onSubmit={handleSubmit}>
             <input
                 type="text"
-                // value={input}
 
                 placeholder="Busca una palabra"
                 className="dictionary-input"
             />
-            <button>Enviar</button>
-
-
-
-
+            <button type="submit">Enviar</button>
+        </form>
     </div>
     )
 }
