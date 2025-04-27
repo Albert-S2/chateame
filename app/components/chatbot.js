@@ -88,7 +88,11 @@ export default function Chatbot() {
   }
 
   function handleLogout() {
-    router.push('/'); // Redirect to the login page
+    // Clear the auth token cookie
+    document.cookie = "authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+
+    // Redirect to the main page
+    router.push('/');
   }
 
   return (
