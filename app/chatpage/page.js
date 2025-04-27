@@ -1,6 +1,5 @@
 import React from 'react';
 import Chatbot from '../components/chatbot';
-import Dictionary from '../components/dictionary';
 import './chatpage.css';
 
 export default function ChatPage() {
@@ -9,7 +8,6 @@ export default function ChatPage() {
         <main>
           <div className="chatpage-container">
           <Chatbot />
-          <Dictionary />
           </div> 
         </main>
       </div>

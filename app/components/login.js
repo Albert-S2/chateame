@@ -14,9 +14,10 @@ export default function LoginForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Logging in with:', {myName, password});
+        console.log('Logging in with:', { myName, password });
         if (myName === validUsername && password === validPassword) {
             console.log('Login successful');
+            document.cookie = `authToken=true; path=/`; // Set a simple auth token
             router.push('/chatpage');
         } else {
             console.log('Invalid login');
