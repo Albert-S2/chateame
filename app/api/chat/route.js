@@ -52,6 +52,20 @@ export async function POST(req) {
       ],
     });
 
+    // Second role: Provide a conversational response
+    const dictionarySystemMessage = {
+      role: "system",
+      content: "Please give an aswer that is very similar to the dictionary where when english word is provided you give Spanish transalation and if the provided word is in spanish you give the english translation.",
+    };
+
+    const dictionaryCompletion = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [
+        dictionarySystemMessage,
+        { role: "user", content: message },
+      ],
+    });
+
     const conversationalResponse = conversationCompletion.choices[0].message.content;
 
     // Return both responses
