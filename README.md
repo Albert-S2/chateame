@@ -45,5 +45,8 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 - Connected OpenAI keys
 - Built chat with OpenAI responses
 
+## Currently working on
+- Dictionary Component 
+
 ## Next Steps
 
