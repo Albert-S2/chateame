@@ -148,6 +148,12 @@ export default function Chatbot() {
           type="text"
           value={input}
           onChange={handleChange}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault(); // Prevent the default form submission
+              handleSubmit(); // Trigger the submit function
+            }
+          }}
           placeholder="Escribe tu mensaje aquí..."
           className="chatbot-input"
         />
