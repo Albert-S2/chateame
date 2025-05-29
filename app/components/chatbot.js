@@ -7,6 +7,7 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [typingMessage, setTypingMessage] = useState(""); // State for the typing effect
   const [selectedLevel, setSelectedLevel] = useState("A1"); // Default level
 
   const router = useRouter();
@@ -17,7 +18,7 @@ export default function Chatbot() {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [messages]);
+  }, [messages, typingMessage]);
 
   function handleChange(event) {
     setInput(event.target.value);
@@ -71,9 +72,8 @@ export default function Chatbot() {
         content: data.reply,
       };
 
-      setMessages((prevMessages) =>
-        prevMessages.concat([correctedMessage, assistantMessage])
-      );
+      // Start the typing effect
+      simulateTypingEffect(assistantMessage.content);
     } catch (error) {
       console.error("Error:", error);
       setMessages((prevMessages) =>
@@ -86,6 +86,22 @@ export default function Chatbot() {
       setIsLoading(false);
     }
   }
+
+  const simulateTypingEffect = (text) => {
+    setTypingMessage(""); // Reset the typing message
+    let index = 0;
+
+    const typingInterval = setInterval(() => {
+      if (index < text.length) {
+        setTypingMessage((prev) => prev + text[index]);
+        index++;
+      } else {
+        clearInterval(typingInterval);
+        setMessages((prev) => [...prev, { role: "assistant", content: text }]);
+        setTypingMessage(""); // Clear the typing message after completion
+      }
+    }, 50); // Adjust typing speed (50ms per character)
+  };
 
   function handleReset() {
     window.location.reload(); // Reloads the page
@@ -133,6 +149,11 @@ export default function Chatbot() {
             )}
           </div>
         ))}
+        {typingMessage && (
+          <div className="chatbot-message chatbot-message-assistant">
+            {typingMessage}
+          </div>
+        )}
         {/* Invisible div to ensure scrolling to the bottom */}
         <div ref={messagesEndRef} />
       </div>
