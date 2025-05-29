@@ -6,7 +6,7 @@ const openai = new OpenAI({
 
 export async function POST(req) {
   try {
-    const { message, level } = await req.json(); // Expecting both message and level
+    const { message, level, history } = await req.json(); // Expecting message, level, and history
 
     if (!message || typeof message !== "string") {
       return new Response(
@@ -18,6 +18,13 @@ export async function POST(req) {
     if (!level || typeof level !== "string") {
       return new Response(
         JSON.stringify({ error: "Invalid request: 'level' must be a string" }),
+        { status: 400 }
+      );
+    }
+
+    if (!Array.isArray(history)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid request: 'history' must be an array" }),
         { status: 400 }
       );
     }
@@ -38,6 +45,12 @@ export async function POST(req) {
 
     const correctedSentence = correctionCompletion.choices[0].message.content;
 
+    // Add the corrected sentence to the conversation history
+    const updatedHistory = [
+      ...history,
+      { role: "user", content: correctedSentence },
+    ];
+
     // Second role: Provide a conversational response
     const conversationSystemMessage = {
       role: "system",
@@ -48,7 +61,7 @@ export async function POST(req) {
       model: "gpt-3.5-turbo",
       messages: [
         conversationSystemMessage,
-        { role: "user", content: message },
+        ...updatedHistory, // Include the conversation history
       ],
     });
 
@@ -59,6 +72,7 @@ export async function POST(req) {
       JSON.stringify({
         corrected: correctedSentence,
         reply: conversationalResponse,
+        history: updatedHistory, // Return the updated history to the frontend
       }),
       { status: 200 }
     );
