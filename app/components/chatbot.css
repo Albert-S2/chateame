@@ -2,9 +2,9 @@
 
 .chatbot-container {
   width: 90%;
-  max-height: 90vh; /* Adjust to 90% of the viewport height */
-  height: 90vh; /* Ensure it fills most of the screen */
-  margin: 5vh auto; /* Add vertical margin for centering */
+  max-height: 80vh; /* Reduce to 80% of the viewport height */
+  height: 80vh; /* Ensure it fills most of the screen */
+  margin: 10vh auto; /* Adjust vertical margin for centering */
   padding: 20px;
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   background-color: #ffffff;
@@ -221,13 +221,22 @@
   }
 
   .chatbot-input {
-    font-size: 14px; /* Adjust input font size */
+    width: 100%; /* Make the input box span the full width */
+    font-size: 14px; /* Adjust font size for smaller screens */
     padding: 10px;
+    margin-bottom: 10px; /* Add spacing below the input box */
   }
 
   .chatbot-submit-button {
+    width: 100%; /* Make the submit button span the full width */
     font-size: 14px;
-    padding: 10px 15px;
+    padding: 10px;
+  }
+
+  .chatbot-form {
+    display: flex;
+    flex-direction: column; /* Stack the input and button vertically */
+    gap: 10px; /* Add spacing between input and button */
   }
 
   .chatbot-buttons {
