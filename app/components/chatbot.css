@@ -84,15 +84,16 @@
 
 .chatbot-input {
   flex: 1;
-  padding: 15px; 
+  width: 100%; /* Make the input box span the full width */
+  padding: 10px;
+  margin-bottom: 10px; /* Add spacing below the input box */
   border: 1px solid #e0e0e0; 
-  font-size: 16px; 
+  border-radius: 8px;
   outline: none;
   background-color: #ffffff; 
   color: #333333; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* Sans-serif font */
   transition: border-color 0.3s ease;
-  border-radius: 8px;
 }
 
 .chatbot-input::placeholder {
@@ -108,15 +109,16 @@
 
 .chatbot-submit-button {
   padding: 15px 25px; 
+  width: 100%; /* Make the submit button span the full width */
+  font-size: 16px; /* Ensure font size is at least 16px to prevent Safari zooming */
+  padding: 10px;
   background-color: #5c5c5c; 
   color: #ffffff; 
   border: none;
   border-radius: 8px; 
   cursor: pointer;
-  font-size: 16px; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* Sans-serif font */
   transition: background-color 0.3s ease;
-  border-radius: 8px;
 }
 
 .chatbot-submit-button:disabled {
@@ -222,14 +224,14 @@
 
   .chatbot-input {
     width: 100%; /* Make the input box span the full width */
-    font-size: 14px; /* Adjust font size for smaller screens */
+    font-size: 16px; /* Ensure font size is at least 16px */
     padding: 10px;
     margin-bottom: 10px; /* Add spacing below the input box */
   }
 
   .chatbot-submit-button {
     width: 100%; /* Make the submit button span the full width */
-    font-size: 14px;
+    font-size: 16px; /* Ensure font size is at least 16px */
     padding: 10px;
   }
 
@@ -284,12 +286,12 @@
   }
 
   .chatbot-input {
-    font-size: 12px;
+    font-size: 16px; /* Ensure font size is at least 16px */
     padding: 8px;
   }
 
   .chatbot-submit-button {
-    font-size: 12px;
+    font-size: 16px; /* Ensure font size is at least 16px */
     padding: 8px 12px;
   }
 
