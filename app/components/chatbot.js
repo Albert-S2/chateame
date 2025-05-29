@@ -28,7 +28,7 @@ export default function Chatbot() {
   }
 
   async function handleSubmit(event) {
-    event.preventDefault();
+    if (event) event.preventDefault();
 
     const userMessage = input.trim();
     if (!userMessage) return;
@@ -46,7 +46,11 @@ export default function Chatbot() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage, level: selectedLevel }), // Include level in the request
+        body: JSON.stringify({
+          message: userMessage,
+          level: selectedLevel,
+          history: updatedMessages, // Send the conversation history
+        }),
       });
 
       if (!response.ok) {
