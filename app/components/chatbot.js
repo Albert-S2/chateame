@@ -13,7 +13,6 @@ export default function Chatbot() {
   const router = useRouter();
   const messagesEndRef = useRef(null);
 
-  // Scroll to the bottom of the messages container
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -60,20 +59,16 @@ export default function Chatbot() {
 
       const data = await response.json();
 
+      // Add the corrected sentence to the chat
       const correctedMessage = {
         role: "assistant",
-        type: "correction",
-        content: `${data.corrected}`,
+        content: `<i>${data.corrected}</i>`,
       };
 
-      const assistantMessage = {
-        role: "assistant",
-        type: "response",
-        content: data.reply,
-      };
+      setMessages((prev) => [...prev, correctedMessage]);
 
-      // Start the typing effect
-      simulateTypingEffect(assistantMessage.content);
+      // Start the typing effect for the bot's response
+      simulateTypingEffect(data.reply);
     } catch (error) {
       console.error("Error:", error);
       setMessages((prevMessages) =>
@@ -97,7 +92,10 @@ export default function Chatbot() {
         index++;
       } else {
         clearInterval(typingInterval);
-        setMessages((prev) => [...prev, { role: "assistant", content: text }]);
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", content: `<b>Chatéame!:</b> ${text}` },
+        ]);
         setTypingMessage(""); // Clear the typing message after completion
       }
     }, 50); // Adjust typing speed (50ms per character)
@@ -135,26 +133,14 @@ export default function Chatbot() {
             className={`chatbot-message ${
               msg.role === "user" ? "chatbot-message-user" : "chatbot-message-assistant"
             }`}
-          >
-            {msg.type === "correction" ? (
-              <div className="correction-message">
-                <em>
-                  {msg.content}
-                </em>
-              </div>
-            ) : (
-              <>
-                <strong>{msg.role === "user" ? "Tú" : "¡Chaté a me!"}:</strong> {msg.content}
-              </>
-            )}
-          </div>
+            dangerouslySetInnerHTML={{ __html: msg.content }} // Render HTML content
+          />
         ))}
         {typingMessage && (
           <div className="chatbot-message chatbot-message-assistant">
             {typingMessage}
           </div>
         )}
-        {/* Invisible div to ensure scrolling to the bottom */}
         <div ref={messagesEndRef} />
       </div>
 
@@ -165,12 +151,6 @@ export default function Chatbot() {
           type="text"
           value={input}
           onChange={handleChange}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault(); // Prevent the default form submission
-              handleSubmit(); // Trigger the submit function
-            }
-          }}
           placeholder="Escribe tu mensaje aquí..."
           className="chatbot-input"
         />
@@ -190,5 +170,3 @@ export default function Chatbot() {
     </div>
   );
 }
-
-// This is a placeholder comment to ensure the code snippet is complete.

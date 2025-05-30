@@ -6,7 +6,7 @@ const openai = new OpenAI({
 
 export async function POST(req) {
   try {
-    const { message, level, history } = await req.json(); // Expecting message, level, and history
+    let { message, level, history } = await req.json(); // Expecting message, level, and history
 
     if (!message || typeof message !== "string") {
       return new Response(
@@ -23,11 +23,11 @@ export async function POST(req) {
     }
 
     if (!Array.isArray(history)) {
-      return new Response(
-        JSON.stringify({ error: "Invalid request: 'history' must be an array" }),
-        { status: 400 }
-      );
+      console.warn("Invalid or missing history. Defaulting to an empty array.");
+      history = []; // Default to an empty array if history is invalid
     }
+
+    console.log("Received history from frontend:", history);
 
     // First role: Correct the user's sentence
     const correctionSystemMessage = {
@@ -51,10 +51,12 @@ export async function POST(req) {
       { role: "user", content: correctedSentence },
     ];
 
+    console.log("Updated history for OpenAI:", updatedHistory);
+
     // Second role: Provide a conversational response
     const conversationSystemMessage = {
       role: "system",
-      content: `You are a young adult from Spain who likes to have online conversations. Your goal is to help the user practice their Spanish. Respond to the user's input in a conversational and friendly way, using vocabulary suitable for a ${level} Spanish level. Keep your response under 400 characters.`,
+      content: `You are a young adult from Spain who likes to have online conversations. Your goal is to speak as close to real person at that age es possible. Respond to the user's input in a conversational and friendly way, using vocabulary suitable for a ${level} Spanish level. Keep your response under 400 characters.`,
     };
 
     const conversationCompletion = await openai.chat.completions.create({

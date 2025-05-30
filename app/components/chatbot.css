@@ -96,22 +96,43 @@
 
 .chatbot-form {
   display: flex;
-  flex-direction: row; /* Place input and button side by side */
+  align-items: center; /* Align input and button vertically */
   gap: 10px; /* Add spacing between input and button */
 }
 
 .chatbot-input {
-  flex: 1; /* Allow the input field to take up remaining space */
-  width: 100%; /* Ensure it spans full width when needed */
-  font-size: 16px; /* Ensure font size is at least 16px */
-  padding: 10px;
-  margin-bottom: 0; /* Remove bottom margin */
+  flex: 1; /* Allow the input box to take up available space */
+  font-size: 16px; /* Ensure consistent font size */
+  padding: 10px; /* Add padding for better usability */
+  border: 1px solid #ddd; /* Add a border */
+  border-radius: 8px; /* Match the button's border radius */
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.chatbot-input:focus {
+  border-color: #333333; /* Highlight border on focus */
+  
 }
 
 .chatbot-submit-button {
-  width: auto; /* Adjust width to fit the content */
-  font-size: 16px; /* Ensure font size is at least 16px */
-  padding: 10px;
+  font-size: 16px; /* Ensure consistent font size */
+  padding: 10px 20px; /* Add padding for better usability */
+  background-color: #333333; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Match the input box's border radius */
+  cursor: pointer; /* Add pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.chatbot-submit-button:disabled {
+  background-color: #ccc; /* Gray out the button when disabled */
+  cursor: not-allowed; /* Show not-allowed cursor */
+}
+
+.chatbot-submit-button:hover:not(:disabled) {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 .chatbot-buttons {
@@ -198,48 +219,29 @@
 
   .chatbot-messages {
     max-height: 300px; /* Reduce height for smaller screens */
-    font-size: 14px; /* Adjust font size */
-  }
-
-  .chatbot-message {
-    font-size: 14px; /* Adjust font size for smaller screens */
-    line-height: 1.5; /* Adjust line height for readability */
+    font-size: 16px; /* Adjust font size */
   }
 
   .chatbot-input {
-    width: 100%; /* Make the input box span the full width */
-    font-size: 16px; /* Ensure font size is at least 16px */
+    font-size: 16px; /* Adjust input font size */
     padding: 10px;
-    margin-bottom: 10px; /* Add spacing below the input box */
   }
 
   .chatbot-submit-button {
-    width: 100%; /* Make the submit button span the full width */
-    font-size: 16px; /* Ensure font size is at least 16px */
-    padding: 10px;
-  }
-
-  .chatbot-form {
-    display: flex;
-    flex-direction: column; /* Stack the input and button vertically */
-    gap: 10px; /* Add spacing between input and button */
+    font-size: 16px;
+    padding: 10px 15px;
   }
 
   .chatbot-buttons {
-    flex-direction: row; /* Arrange buttons horizontally */
-    justify-content: center; /* Center buttons horizontally */
-    gap: 10px; /* Add spacing between buttons */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
   }
 
   .chatbot-reset-button,
   .chatbot-logout-button {
-    width: auto; /* Adjust width to fit the content */
-    font-size: 14px; /* Adjust font size for smaller screens */
+    width: 100%; /* Make buttons full width */
+    font-size: 16px;
     padding: 10px;
-  }
-
-  .chatbot-loading {
-    font-size: 14px; /* Adjust font size for loading text */
   }
 
   .level-selection {
@@ -248,7 +250,7 @@
   }
 
   .level-box {
-    font-size: 14px;
+    font-size: 16px;
     padding: 5px 10px;
   }
 }
@@ -256,44 +258,37 @@
 /* Media query for screens smaller than 480px (mobile phones like iPhone 12) */
 @media (max-width: 480px) {
   .chatbot-container {
-    height: 55vh; /* Set height to 55% of the viewport */
-    max-height: 55vh; /* Ensure it doesn’t exceed 55% */
     padding: 15px;
     gap: 10px;
   }
 
   .chatbot-title {
-    font-size: 16px; /* Match input box size */
+    font-size: 24px; /* Further reduce font size */
   }
 
   .chatbot-messages {
-    max-height: calc(55vh - 150px); /* Adjust height dynamically */
-    font-size: 16px; /* Match input box size */
-  }
-
-  .chatbot-message {
-    font-size: 16px; /* Match input box size */
-    line-height: 1.5; /* Adjust line height for readability */
+    max-height: 250px; /* Reduce height further */
+    font-size: 16px; /* Smaller font size */
   }
 
   .chatbot-input {
-    font-size: 16px; /* Ensure font size matches everywhere */
+    font-size: 16px;
     padding: 8px;
   }
 
   .chatbot-submit-button {
-    font-size: 16px; /* Match input box size */
+    font-size: 16px;
     padding: 8px 12px;
   }
 
   .chatbot-reset-button,
   .chatbot-logout-button {
-    font-size: 16px; /* Match input box size */
+    font-size: 16px;
     padding: 8px;
   }
 
   .level-box {
-    font-size: 16px; /* Match input box size */
+    font-size: 16px;
     padding: 4px 8px;
   }
 }
