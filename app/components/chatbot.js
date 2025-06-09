@@ -83,7 +83,7 @@ export default function Chatbot() {
   }
 
   const simulateTypingEffect = (text) => {
-    setTypingMessage(""); // Reset the typing message
+    setTypingMessage("");
     let index = 0;
 
     const typingInterval = setInterval(() => {
@@ -94,22 +94,22 @@ export default function Chatbot() {
         clearInterval(typingInterval);
         setMessages((prev) => [
           ...prev,
-          { role: "assistant", content: `<b>Chatéame!:</b> ${text}` },
+          { role: "assistant", content: `${text}` },
         ]);
-        setTypingMessage(""); // Clear the typing message after completion
+        setTypingMessage(""); 
       }
-    }, 50); // Adjust typing speed (50ms per character)
+    }, 50);
   };
 
   function handleReset() {
-    window.location.reload(); // Reloads the page
+    window.location.reload();
   }
 
   function handleLogout() {
     // Clear the auth token cookie
     document.cookie = "authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 
-    // Redirect to the main page
+    
     router.push('/');
   }
 
@@ -137,7 +137,7 @@ export default function Chatbot() {
             className={`chatbot-message ${
               msg.role === "user" ? "chatbot-message-user" : "chatbot-message-assistant"
             }`}
-            dangerouslySetInnerHTML={{ __html: msg.content }} // Render HTML content
+            dangerouslySetInnerHTML={{ __html: msg.content }}
           />
         ))}
         {typingMessage && (
