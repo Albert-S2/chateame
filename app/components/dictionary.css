@@ -1,0 +1,28 @@
+.languageSelection {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  /* font-family: 'Courier New', Courier, monospace;  */
+}
+
+
+.language-button {
+  padding: 5px 13px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-button:hover {
+  background-color: #b55edd;
+  color: #ffffff;
+}
+
+.language-button.selected {
+  background-color: #781eb4;
+  color: #ffffff;
+}
