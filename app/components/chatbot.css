@@ -61,7 +61,7 @@ body {
 }
 
 .chatbot-message-user {
-  background-color: #edc8f5; 
+  background-color: #dadada; 
   border-radius: 8px; 
   align-self: flex-end;
   color: #000000; 
@@ -73,7 +73,7 @@ body {
   align-self: flex-start;
   border-radius: 8px;
   color: #000000; 
-  background-color: #9c7f88; 
+  background-color: #ffffff; 
 }
 
 /* .chatbot-message-assistant::after {
@@ -192,18 +192,18 @@ body {
   border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
-  color: #000000;
+  color: #474747;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .level-box:hover {
-  background-color: #b55edd;
+  background-color: #525252;
   color: #ffffff;
 }
 
 .level-box.selected {
-  background-color: #781eb4;
+  background-color: #000000;
   color: #ffffff;
   /* border-color: #000000; */
 }
