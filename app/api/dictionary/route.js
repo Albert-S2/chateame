@@ -22,16 +22,16 @@ export async function POST(req) {
             );
         }
 
-        if (leng !== "Espanol" && leng !== "Ingles") {
+        if (leng !== "Español" && leng !== "Inglés") {
             return new Response(
-                JSON.stringify({ error: "Invalid value for 'leng'. Must be 'Español' or 'Ingles'." }),
+                JSON.stringify({ error: "Invalid value for 'leng'. Must be 'Español' or 'Inglés'." }),
                 { status: 400 }
             );
         }
 
         const dictionaryMessage = {
             role: "system",
-            content: `You are a helpful dictionary assistant. Provide the translation of the word "${word}" in ${leng}. It should reminds of language dictionary translation. If the word is not found, respond with "Word not found."`,
+            content: `Provide strict translation of word "${word}" in ${leng} (don't forget article etc). It should reminds of language dictionary translation. If the word is mis-spelt, re-write in correct spelling and then translate. If the word is not found, respond with "Word not found." Never write the sentence, always as short answer as possible.`,
         };
 
         const dictionaryComplition = await openai.chat.completions.create({
