@@ -4,13 +4,16 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 60vh;
   padding: 24px 0;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
 }
 
 .topic-card {
-  background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(123, 56, 163, 0.10);
   padding: 32px 36px 28px 36px;
@@ -105,39 +108,3 @@
   text-align: center;
   margin-top: 10px;
 }
-
-/* Responsive styles for mobile */
-@media (max-width: 600px) {
-  .topic-card {
-    padding: 18px 8px 16px 8px;
-    max-width: 98vw;
-    gap: 12px;
-  }
-  .topic-title {
-    font-size: 22px;
-  }
-  .topic-form {
-    flex-direction: column;
-    gap: 7px;
-  }
-  .topic-input {
-    font-size: 14px;
-    padding: 7px 8px;
-    width: 100%;
-  }
-  .topic-submit,
-  .topic-reset {
-    width: 100%;
-    font-size: 14px;
-    padding: 7px 0;
-  }
-  .topic-result {
-    font-size: 16px;
-    padding: 10px 8px;
-    min-width: 120px;
-  }
-}
-
-
-
-
