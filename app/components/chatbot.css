@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
-body {
+/* body {
   background: linear-gradient(160deg, #9d53b6 0%, #d34a73 100%);
   margin: 0;
   min-height: 100vh;
-}
+} */
 
 .chatbot-container {
   position: relative; /* Ensure the container stays in place */
