@@ -1,5 +1,43 @@
 .chatpage-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+}
+
+.chatpage-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 12px;
+}
+
+.chatbot-section {
+  /* Chatbot takes more space */
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dictionary-section,
+.topic-section {
+  width: 100%;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .chatpage-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .right-section {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
