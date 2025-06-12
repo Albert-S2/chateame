@@ -83,21 +83,22 @@ export default function Chatbot() {
   }
 
   const simulateTypingEffect = (text) => {
-    setTypingMessage("");
+    setTypingMessage(""); // Clear previous
     let index = 0;
     let current = "";
 
     const typingInterval = setInterval(() => {
       if (index < text.length) {
-        setTypingMessage((prev) => prev + text[index]);
+        current += text[index];
+        setTypingMessage(current);
         index++;
       } else {
         clearInterval(typingInterval);
         setMessages((prev) => [
           ...prev,
-          { role: "assistant", content: `${text}` },
+          { role: "assistant", content: text },
         ]);
-        setTypingMessage(""); 
+        setTypingMessage("");
       }
     }, 50);
   };
