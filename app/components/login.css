@@ -17,19 +17,22 @@ body {
   max-width: 400px; /* Smaller width for login form */
   margin: 0 auto;
   padding: 30px;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  background-color: #ffffff; /* White background */
-  border-radius: 15px;
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* White background */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 20px; /* Space between form elements */
-  color: #333333; /* Dark gray text */
+  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .login-title {
   text-align: center;
-  font-size: 36px; 
+  font-size: 40px; 
   color: #333333; 
   margin: 40px 0px;
   font-weight: bold;
@@ -64,10 +67,10 @@ body {
 .login-input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(199, 190, 190, 0.5);
   border-radius: 8px;
   font-size: 16px;
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.5);
   color: #333333;
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   transition: border-color 0.3s ease;
@@ -78,15 +81,15 @@ body {
 }
 
 .login-input:focus {
-  border-color: #000000; /* Black border on focus */
+  border-color: rgba(90, 90, 90, 0.5);; /* Black border on focus */
   outline: none;
 }
 
 /* Submit button */
 .login-submit-button {
   padding: 12px 20px;
-  background-color: #5c5c5c; /* Dark gray button */
-  color: #ffffff; /* White text */
+  background: rgba(32, 32, 32, 0.5);
+  color: rgba(255, 255, 255, 0.7);
   border: none;
   border-radius: 8px; /* Rounded corners */
   cursor: pointer;
@@ -102,5 +105,5 @@ body {
 }
 
 .login-submit-button:hover:not(:disabled) {
-  background-color: #000000; /* Black on hover */
+  background: rgba(0, 0, 0, 0.7);
 }

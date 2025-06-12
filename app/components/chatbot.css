@@ -18,6 +18,7 @@
   border-radius: 15px;                   /* Rounded corners */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  height: 800px; /* Set a fixed height for the chatbot container */
 }
 
 
@@ -54,14 +55,14 @@
 .chatbot-message {
   padding: 3px 20px; 
   /* border-radius: 8px;  */
-  font-size: 14px; 
+  font-size: 16px; 
   line-height: 1.8; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   border: 1px solid #ede8e8; /* Fixed border property */
 }
 
 .chatbot-message-user {
-  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
   backdrop-filter: blur(10px);           /* The "glass" blur effect */
   -webkit-backdrop-filter: blur(10px);   /* Safari support */
   border-radius: 15px;                   /* Rounded corners */
@@ -81,7 +82,7 @@
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+  background: rgba(255, 255, 255, 0.5);  /* Semi-transparent white */
   backdrop-filter: blur(10px);           /* The "glass" blur effect */
   -webkit-backdrop-filter: blur(10px);   /* Safari support */
   border-radius: 15px;                   /* Rounded corners */
@@ -94,7 +95,7 @@
   font-style: italic;
   color: #000000; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* Sans-serif font */
-  font-size: 14px; 
+  font-size: 16px; 
 }
 
 
@@ -123,12 +124,12 @@
 }
 
 .chatbot-submit-button {
-  font-size: 14px; /* Ensure consistent font size */
-  padding: 5px 20px; /* Add padding for better usability */
+  font-size: 16px; /* Ensure consistent font size */
+  padding: 10px 20px; /* Add padding for better usability */
   background-color: #333333; /* Button background color */
   color: #fff; /* Button text color */
   border: none; /* Remove default border */
-  border-radius: 8px; /* Match the input box's border radius */
+  border-radius: 15px; /* Match the input box's border radius */
   cursor: pointer; /* Add pointer cursor */
   transition: background-color 0.3s ease; /* Smooth hover effect */
 }
@@ -152,22 +153,22 @@
 .chatbot-reset-button,
 .chatbot-logout-button {
   width: 150px; /* Make buttons the same width */
-  padding: 5px 20px; /* Adjust padding for consistency */
-  font-size: 14px;
-  border-radius: 8px;
+  padding: 10px 20px; /* Adjust padding for consistency */
+  font-size: 16px;
+  border-radius: 15px;
   cursor: pointer;
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   transition: background-color 0.3s ease;
 }
 
 .chatbot-reset-button {
-  background-color: #d6827c; /* Red for reset */
+  background-color: #c2362c; /* Red for reset */
   color: #ffffff;
   border: none;
 }
 
 .chatbot-reset-button:hover {
-  background-color: #ba133a; /* Darker red on hover */
+  background-color: #7a273b; /* Darker red on hover */
 }
 
 .chatbot-logout-button {
@@ -207,4 +208,25 @@
   background-color: #000000;
   color: #ffffff;
   /* border-color: #000000; */
+}
+
+.chatbot-messages::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(243, 243, 243, 0.0);
+  border-radius: 15px;
+}
+.chatbot-messages::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 15px;
+  margin-top: 10px;    /* This works in some browsers (Chrome/Edge) */
+  margin-bottom: 10px; /* This works in some browsers (Chrome/Edge) */
+}
+.chatbot-messages::-webkit-scrollbar-thumb {
+  background: rgba(243, 243, 243, 0.3);
+  border-radius: 15px;
+  /* border: 2px solid rgba(255,255,255,0.3); */
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(243, 243, 243, 0.7);
 }

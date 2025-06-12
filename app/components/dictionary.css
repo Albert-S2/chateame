@@ -10,19 +10,18 @@
   -webkit-backdrop-filter: blur(10px);   /* Safari support */
   border-radius: 15px;                   /* Rounded corners */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  height: 300px;  /* Soft shadow */
 }
 
 .dictionary-card {
   
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(123, 56, 163, 0.10);
-  padding: 32px 36px 28px 36px;
   max-width: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 18px;
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
 
