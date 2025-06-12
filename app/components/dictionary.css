@@ -5,65 +5,62 @@
   justify-content: center;
   align-items: flex-start;
   padding: 24px 0;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  height: 380px; 
 }
 
 .dictionary-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(123, 56, 163, 0.10);
-  padding: 32px 36px 28px 36px;
   max-width: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 18px;
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .dictionary-title {
   text-align: center;
-  font-size: 28px;
-  color: #781eb4;
+  font-size: 20px; 
+  color: #333333; 
+  margin-bottom: 5px;
   font-weight: bold;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+  text-transform: uppercase; 
+  letter-spacing: 8px; 
+  font-family: 'Courier New', Courier, monospace; 
+  padding: 10px 0; /* Add padding for better spacing */
 }
 
 .languageSelection {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
   justify-content: center;
+  gap: 10px;
   margin-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace; 
+  padding: 10px 0; /* Add padding for better spacing */
 }
 
 .language-button {
-  padding: 7px 18px;
-  border-radius: 10px;
+  padding: 5px 13px;
+  border-radius: 15px;
   font-size: 16px;
-  font-weight: 600;
-  color: #333333;
-  background-color: #f3e6ff;
-  border: 1px solid #d1b3ff;
+  font-weight: bold;
+  color: #474747;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(123, 56, 163, 0.06);
-  transition: background 0.2s, color 0.2s, border 0.2s;
-  min-width: 90px;
-  text-align: center;
+  transition: all 0.3s ease;
 }
 
-.language-button.selected,
-.language-button:active {
-  background-color: #781eb4;
-  color: #fff;
-  border: 1px solid #781eb4;
+.language-button.selected{
+  background: rgba(0, 0, 0, 0.815);
+  color: #ffffff;
 }
 
 .language-button:hover {
-  background-color: #b55edd;
-  color: #fff;
-  border: 1px solid #781eb4;
+  background: rgba(59, 6, 59, 0.5);
+  color: #ffffff;
 }
 
 .dictionary-form-container {
@@ -79,96 +76,106 @@
 }
 
 .dictionary-input {
-  flex: 1;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #d1b3ff;
-  font-size: 15px;
-  font-family: inherit;
-  background: #faf7ff;
-  color: #333;
-  outline: none;
-  transition: border 0.2s;
+  flex: 1; /* Allow the input box to take up available space */
+  font-size: 16px; /* Ensure consistent font size */
+  padding: 10px 20px; /* Add padding for better usability */
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
 }
 
 .dictionary-input:focus {
-  border: 1.5px solid #781eb4;
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Highlight border on focus */
+}
+.dictionary-submit{
+  font-size: 16px; /* Ensure consistent font size */
+  padding: 10px 20px; /* Add padding for better usability */
+  background: rgba(59, 6, 59, 0.5);
+  color: #fff; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 15px; /* Match the input box's border radius */
+  cursor: pointer; /* Add pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
-.dictionary-submit,
+.dictionary-submit:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: not-allowed; /* Show not-allowed cursor */
+}
+
+.dictionary-submit:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.815);
+}
+
 .dictionary-reset {
-  padding: 7px 16px;
-  border-radius: 8px;
-  border: none;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: inherit;
-  background-color: #b55edd;
-  color: #fff;
+  width: 150px; /* Make buttons the same width */
+  padding: 10px 20px; /* Adjust padding for consistency */
+  font-size: 16px;
+  border-radius: 15px;
   cursor: pointer;
-  transition: background 0.2s;
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: none;
 }
 
-.dictionary-submit:hover,
+
 .dictionary-reset:hover {
-  background-color: #781eb4;
+  background: rgba(187, 0, 0, 0.822);
 }
 
 .dictionary-result-container {
   margin-top: 18px;
   display: flex;
   justify-content: center;
+  max-height: 150px;
 }
 
 .dictionary-result {
-  padding: 14px 18px;
-  background: #f3e6ff;
-  border-radius: 10px;
-  font-size: 18px;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(123, 56, 163, 0.07);
+  align-self: flex-start;
+  color: #000000; 
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.5);  /* Semi-transparent white */
+  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  padding: 3px 20px; 
+  font-size: 16px; 
+  line-height: 1.8; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  min-width: 180px;
-  text-align: center;
+  border: 1px solid #ede8e8; /* Fixed border property */
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
 }
 
-/* Responsive styles for mobile */
-@media (max-width: 600px) {
-  .dictionary-card {
-    padding: 18px 8px 16px 8px;
-    max-width: 98vw;
-    gap: 12px;
-  }
-  .dictionary-title {
-    font-size: 22px;
-  }
-  .languageSelection {
-    gap: 7px;
-    margin-bottom: 6px;
-  }
-  .language-button {
-    padding: 7px 10px;
-    font-size: 14px;
-    min-width: 70px;
-  }
-  .dictionary-form {
-    flex-direction: column;
-    gap: 7px;
-  }
-  .dictionary-input {
-    font-size: 14px;
-    padding: 7px 8px;
-    width: 100%;
-  }
-  .dictionary-submit,
-  .dictionary-reset {
-    width: 100%;
-    font-size: 14px;
-    padding: 7px 0;
-  }
-  .dictionary-result {
-    font-size: 16px;
-    padding: 10px 8px;
-    min-width: 120px;
-  }
+.dictionary-result::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(243, 243, 243, 0.0);
+  border-radius: 15px;
+}
+.dictionary-result::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 15px;
+  margin-top: 10px;    /* This works in some browsers (Chrome/Edge) */
+  margin-bottom: 10px; /* This works in some browsers (Chrome/Edge) */
+}
+.dictionary-result::-webkit-scrollbar-thumb {
+  background: rgba(116, 112, 112, 0.3);
+  border-radius: 15px;
+  /* border: 2px solid rgba(255,255,255,0.3); */
+}
+
+.dictionary-result::-webkit-scrollbar-thumb:hover {
+  background: rgba(243, 243, 243, 0.7);
 }

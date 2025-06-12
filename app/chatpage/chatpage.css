@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(160deg, #9d53b6 0%, #d34a73 100%);
+  background: linear-gradient(160deg, #d6acd6 0%, #552d39 100%);
   margin: 0;
   min-height: 100vh;
 }
@@ -15,18 +15,18 @@ body {
 .chatpage-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 32px;
+  gap: 24px; /* Reduce gap between columns */
   align-items: flex-start;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 32px 12px;
+  padding: 24px 8px; /* Reduce padding */
 }
 
 .right-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px; /* Reduce gap between Dictionary and Topic */
 }
 
 .dictionary-section,
@@ -34,13 +34,9 @@ body {
   width: 100%;
 }
 
-@media (max-width: 900px) {
-  .chatpage-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .right-section {
-    flex-direction: column;
-    gap: 16px;
-  }
+/* Optional: Remove extra margin from containers */
+.chatbot-container,
+.dictionary-card,
+.topic-card {
+  margin: 0;
 }

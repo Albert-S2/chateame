@@ -43,7 +43,13 @@ export default function Topic() {
                             onChange={(e) => setInput(e.target.value)}
                             className="topic-input"
                         />
-                        <button type="submit" className="topic-submit">Buscar</button>
+                        <button
+                            type="submit"
+                            className="topic-submit"
+                            disabled={!input.trim()} // disables if input is empty
+                        >
+                            Buscar
+                        </button>
                         <button
                             type="reset"
                             className="topic-reset"

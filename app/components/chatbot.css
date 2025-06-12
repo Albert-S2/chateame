@@ -1,26 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
-/* body {
-  background: linear-gradient(160deg, #9d53b6 0%, #d34a73 100%);
-  margin: 0;
-  min-height: 100vh;
-} */
-
 .chatbot-container {
-  position: relative; /* Ensure the container stays in place */
-  width: 60%;
-  max-height: 90vh; /* Reduce height to fit within the viewport */
-  /* margin: 10vh auto; */
+  position: relative;
   padding: 10px 20px;
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* background-color: #ffffff; */
+  /* border-radius: 15px; */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
   display: flex;
   flex-direction: column;
   gap: 15px;
   color: #333333;
   overflow: hidden; /* Prevent content from overflowing */
+  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  height: 800px; /* Set a fixed height for the chatbot container */
 }
 
 
@@ -41,66 +39,60 @@
   min-height: 20vh;
   max-height: 90vh;
   overflow-y: auto; /* Allow scrolling for messages */
-  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
 }
 
 
 .chatbot-message {
   padding: 3px 20px; 
   /* border-radius: 8px;  */
-  font-size: 14px; 
+  font-size: 16px; 
   line-height: 1.8; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   border: 1px solid #ede8e8; /* Fixed border property */
 }
 
 .chatbot-message-user {
-  background-color: #dadada; 
-  border-radius: 8px; 
+  background: rgba(59, 6, 59, 0.5); /* Semi-transparent white */
+  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
   align-self: flex-end;
-  color: #000000; 
+  color: #ffffff; 
 }
 
 
 .chatbot-message-assistant {
-  background-color: #ffffff; 
   align-self: flex-start;
-  border-radius: 8px;
   color: #000000; 
-  background-color: #ffffff; 
   display: flex;
   align-items: flex-start;
   gap: 8px;
+  background: rgba(255, 255, 255, 0.5);  /* Semi-transparent white */
+  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
 }
-
-/* .chatbot-message-assistant::after {
-  content: "|";
-  display: inline-block;
-  animation: blink 1s steps(2, start) infinite;
-} */
-
-/* @keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-} */
-
 
 .chatbot-loading {
   text-align: center;
   font-style: italic;
-  color: #888888; 
+  color: #000000; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* Sans-serif font */
-  font-size: 14px; 
+  font-size: 16px; 
 }
 
 
@@ -112,36 +104,40 @@
 
 .chatbot-input {
   flex: 1; /* Allow the input box to take up available space */
-  font-size: 14px; /* Ensure consistent font size */
-  padding: 5px 20px; /* Add padding for better usability */
-  border: 1px solid #ddd; /* Add a border */
-  border-radius: 8px; /* Match the button's border radius */
+  font-size: 16px; /* Ensure consistent font size */
+  padding: 10px 20px; /* Add padding for better usability */
   outline: none; /* Remove default focus outline */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
 }
 
 .chatbot-input:focus {
-  border-color: #333333; /* Highlight border on focus */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Highlight border on focus */
 }
 
 .chatbot-submit-button {
-  font-size: 14px; /* Ensure consistent font size */
-  padding: 5px 20px; /* Add padding for better usability */
-  background-color: #333333; /* Button background color */
+  font-size: 16px; /* Ensure consistent font size */
+  padding: 10px 20px; /* Add padding for better usability */
+  background: rgba(59, 6, 59, 0.5);
   color: #fff; /* Button text color */
   border: none; /* Remove default border */
-  border-radius: 8px; /* Match the input box's border radius */
+  border-radius: 15px; /* Match the input box's border radius */
   cursor: pointer; /* Add pointer cursor */
   transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 .chatbot-submit-button:disabled {
-  background-color: #ccc; /* Gray out the button when disabled */
+  background: rgba(255, 255, 255, 0.1);
   cursor: not-allowed; /* Show not-allowed cursor */
 }
 
 .chatbot-submit-button:hover:not(:disabled) {
-  background-color: #0056b3; /* Darker blue on hover */
+  background: rgba(0, 0, 0, 0.815);
 }
 
 .chatbot-buttons {
@@ -154,32 +150,32 @@
 .chatbot-reset-button,
 .chatbot-logout-button {
   width: 150px; /* Make buttons the same width */
-  padding: 5px 20px; /* Adjust padding for consistency */
-  font-size: 14px;
-  border-radius: 8px;
+  padding: 10px 20px; /* Adjust padding for consistency */
+  font-size: 16px;
+  border-radius: 15px;
   cursor: pointer;
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   transition: background-color 0.3s ease;
 }
 
 .chatbot-reset-button {
-  background-color: #d6827c; /* Red for reset */
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   border: none;
 }
 
 .chatbot-reset-button:hover {
-  background-color: #ba133a; /* Darker red on hover */
+  background: rgba(187, 0, 0, 0.822);
 }
 
 .chatbot-logout-button {
-  background-color: #5c5c5c; /* Gray for logout */
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   border: none;
 }
 
 .chatbot-logout-button:hover {
-  background-color: #000000; /* Black on hover */
+  background: rgba(0, 0, 0, 0.815);
 }
 
 .level-selection {
@@ -192,8 +188,8 @@
 
 .level-box {
   padding: 5px 13px;
-  border-radius: 8px;
-  font-size: 14px;
+  border-radius: 15px;
+  font-size: 16px;
   font-weight: bold;
   color: #474747;
   cursor: pointer;
@@ -201,102 +197,32 @@
 }
 
 .level-box:hover {
-  background-color: #525252;
+  background: rgba(59, 6, 59, 0.5);
   color: #ffffff;
 }
 
 .level-box.selected {
-  background-color: #000000;
+  background: rgba(0, 0, 0, 0.815);
   color: #ffffff;
-  /* border-color: #000000; */
 }
 
-/* Media query for screens smaller than 768px (tablets and smaller devices) */
-@media (max-width: 768px) {
-  .chatbot-container {
-    width: 95%;
-    padding: 20px;
-    margin: 20px auto;
-    gap: 15px;
-  }
-
-  .chatbot-title {
-    font-size: 28px; /* Reduce font size */
-    margin-bottom: 10px;
-  }
-
-  .chatbot-messages {
-    max-height: 300px; /* Reduce height for smaller screens */
-    font-size: 16px; /* Adjust font size */
-  }
-
-  .chatbot-input {
-    font-size: 16px; /* Adjust input font size */
-    padding: 10px;
-  }
-
-  .chatbot-submit-button {
-    font-size: 16px;
-    padding: 10px 15px;
-  }
-
-  .chatbot-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px;
-  }
-
-  .chatbot-reset-button,
-  .chatbot-logout-button {
-    width: 100%; /* Make buttons full width */
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .level-selection {
-    flex-wrap: wrap; /* Allow levels to wrap */
-    gap: 5px;
-  }
-
-  .level-box {
-    font-size: 16px;
-    padding: 5px 10px;
-  }
+.chatbot-messages::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(243, 243, 243, 0.0);
+  border-radius: 15px;
+}
+.chatbot-messages::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 15px;
+  margin-top: 10px;    /* This works in some browsers (Chrome/Edge) */
+  margin-bottom: 10px; /* This works in some browsers (Chrome/Edge) */
+}
+.chatbot-messages::-webkit-scrollbar-thumb {
+  background: rgba(243, 243, 243, 0.3);
+  border-radius: 15px;
+  /* border: 2px solid rgba(255,255,255,0.3); */
 }
 
-/* Media query for screens smaller than 480px (mobile phones like iPhone 12) */
-@media (max-width: 480px) {
-  .chatbot-container {
-    padding: 15px;
-    gap: 10px;
-  }
-
-  .chatbot-title {
-    font-size: 24px; /* Further reduce font size */
-  }
-
-  .chatbot-messages {
-    max-height: 250px; /* Reduce height further */
-    font-size: 16px; /* Smaller font size */
-  }
-
-  .chatbot-input {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  .chatbot-submit-button {
-    font-size: 16px;
-    padding: 8px 12px;
-  }
-
-  .chatbot-reset-button,
-  .chatbot-logout-button {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  .level-box {
-    font-size: 16px;
-    padding: 4px 8px;
-  }
+.chatbot-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(243, 243, 243, 0.7);
 }
