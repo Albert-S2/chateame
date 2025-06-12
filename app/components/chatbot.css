@@ -62,23 +62,20 @@
 }
 
 .chatbot-message-user {
-  background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  background: rgba(59, 6, 59, 0.5); /* Semi-transparent white */
   backdrop-filter: blur(10px);           /* The "glass" blur effect */
   -webkit-backdrop-filter: blur(10px);   /* Safari support */
   border-radius: 15px;                   /* Rounded corners */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
   align-self: flex-end;
-  color: #000000; 
+  color: #ffffff; 
 }
 
 
 .chatbot-message-assistant {
-  
   align-self: flex-start;
-  
   color: #000000; 
-  
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -126,7 +123,7 @@
 .chatbot-submit-button {
   font-size: 16px; /* Ensure consistent font size */
   padding: 10px 20px; /* Add padding for better usability */
-  background-color: #333333; /* Button background color */
+  background: rgba(59, 6, 59, 0.5);
   color: #fff; /* Button text color */
   border: none; /* Remove default border */
   border-radius: 15px; /* Match the input box's border radius */
@@ -135,12 +132,12 @@
 }
 
 .chatbot-submit-button:disabled {
-  background-color: #ccc; /* Gray out the button when disabled */
+  background: rgba(255, 255, 255, 0.1);
   cursor: not-allowed; /* Show not-allowed cursor */
 }
 
 .chatbot-submit-button:hover:not(:disabled) {
-  background-color: #0056b3; /* Darker blue on hover */
+  background: rgba(0, 0, 0, 0.815);
 }
 
 .chatbot-buttons {
@@ -162,23 +159,23 @@
 }
 
 .chatbot-reset-button {
-  background-color: #c2362c; /* Red for reset */
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   border: none;
 }
 
 .chatbot-reset-button:hover {
-  background-color: #7a273b; /* Darker red on hover */
+  background: rgba(187, 0, 0, 0.822);
 }
 
 .chatbot-logout-button {
-  background-color: #5c5c5c; /* Gray for logout */
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   border: none;
 }
 
 .chatbot-logout-button:hover {
-  background-color: #000000; /* Black on hover */
+  background: rgba(0, 0, 0, 0.815);
 }
 
 .level-selection {
@@ -191,8 +188,8 @@
 
 .level-box {
   padding: 5px 13px;
-  border-radius: 8px;
-  font-size: 14px;
+  border-radius: 15px;
+  font-size: 16px;
   font-weight: bold;
   color: #474747;
   cursor: pointer;
@@ -200,14 +197,13 @@
 }
 
 .level-box:hover {
-  background-color: #525252;
+  background: rgba(59, 6, 59, 0.5);
   color: #ffffff;
 }
 
 .level-box.selected {
-  background-color: #000000;
+  background: rgba(0, 0, 0, 0.815);
   color: #ffffff;
-  /* border-color: #000000; */
 }
 
 .chatbot-messages::-webkit-scrollbar {

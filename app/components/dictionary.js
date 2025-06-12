@@ -48,7 +48,13 @@ export default function Dictionary() {
                             onChange={(e) => setInput(e.target.value)}
                             className="dictionary-input"
                         />
-                        <button type="submit" className="dictionary-submit">Buscar</button>
+                        <button
+                            type="submit"
+                            className="dictionary-submit"
+                            disabled={!input.trim()} // disables if input is empty
+                        >
+                            Buscar
+                        </button>
                         <button
                             type="reset"
                             className="dictionary-reset"

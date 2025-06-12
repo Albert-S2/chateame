@@ -85,6 +85,7 @@ export default function Chatbot() {
   const simulateTypingEffect = (text) => {
     setTypingMessage("");
     let index = 0;
+    let current = "";
 
     const typingInterval = setInterval(() => {
       if (index < text.length) {
