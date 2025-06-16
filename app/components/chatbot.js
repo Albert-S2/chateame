@@ -117,7 +117,7 @@ export default function Chatbot() {
 
   return (
     <div className="chatbot-container">
-      <h1 className="chatbot-title">¡Chaté a me!</h1>
+      <h1 className="chatbot-title">Chaté a me</h1>
 
       {/* Level Selection Boxes */}
       <div className="level-selection">

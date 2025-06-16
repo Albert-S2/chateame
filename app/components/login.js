@@ -28,7 +28,7 @@ export default function LoginForm() {
     return (
         <div className="login-page">
             <div className="login-container">
-                <h1 className="login-title">¡Chaté a me!</h1>
+                <h1 className="login-title">Chaté a me</h1>
                 <form onSubmit={handleSubmit} className="login-form">
                     <div className="login-field">
                         <label className="login-label">Name:</label>
@@ -52,8 +52,12 @@ export default function LoginForm() {
                             required
                         />
                     </div>
-                    <button type="submit" className="login-submit-button">
-                        Login
+                    <button
+                      type="submit"
+                      className="login-submit-button"
+                      disabled={!myName || !password} // or whatever your validation is
+                    >
+                      Login
                     </button>
                 </form>
             </div>
