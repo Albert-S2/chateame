@@ -1,52 +1,79 @@
-
-## Tech Stack: 
--> Page has been deployed with Vercel. (www.chateame.vercel.app) 
--> Next.js / React
--> JavaScript + HTML + CSS
+# Chaté a me
+A conversational Spanish chatbot for learners of all levels
 
 
-## Getting Started
+## Overview
+Chaté a me is a web-based chatbot designed to help users practise Spanish conversation in a natural, interactive way. Users can select their language proficiency level (from A1 to C2) and engage in written dialogue with an AI that mimics a native Spanish speaker. The app is designed to complement traditional language learning tools by offering a space to practise real-life webchat conversations.
 
-First, run the development server:
 
-```bash
+## Features
+- Conversational Chat Interface – Styled like WhatsApp for familiarity and ease of use.
+- Grammar Correction – The chatbot corrects your Spanish input before replying, helping you learn from mistakes.
+- Level Selection – Choose your Spanish level (A1–C2) to tailor the complexity of the conversation.
+- Dictionary – User can translate unfamiliar words or look up new ones without leaving the app.
+- Topic Vocabulary Builder – Enter a topic and receive 5 useful Spanish words with English translations to boost fluency.
+- All-in-One Practice – Everything you need to stay in the flow of conversation is built into the interface.
+
+
+## Tech Stack
+
+### Frontend
+
+- Next.js (React framework)
+- React, JavaScript
+- HTML & CSS
+
+### Backend / API
+
+- OpenAI API (GPT-3.5-Turbo via REST)
+
+### Runtime & Package Management
+
+- Node.js
+- NPM
+ 
+### Environment Management
+
+- .env files for API keys and secrets
+
+### Deployment
+
+- Vercel
+
+### CI/CD & Version Control
+
+- GitHub Actions
+- Git & GitHub
+
+
+## Demo
+Coming soon – a short video demo will be added here.
+
+
+## Installation & Setup
+### To run the app locally:
+1. Clone the repository
+```
+https://github.com/Albert-S2/chateame.git
+cd chate-a-me
+```
+2. Install dependencies
+```
+npm install
+```
+3. Create a .env.local file in the root directory and add the following:
+```
+OPENAI_API_KEY=your_openai_key_here
+NEXT_PUBLIC_USERNAME=your_login
+NEXT_PUBLIC_PASSWORD=your_password
+```
+4. Run the development server
+```
 npm run dev
-# or
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+5. Open http://localhost:3000 in your browser to use the app.
 
 
-## Completed
-
-- Create new repository
-- Add Next.js project
-- Deploy with Vercel
-- Add GitHub Action
-- Build Login Page
-- Add login keys to Vercel
-- Registered with OpenAI
-- Connected OpenAI keys
-- Built chat with OpenAI responses
-
-## Currently working on
-- Dictionary Component 
-
-## Next Steps
-
+## Configuration
+OpenAI API Key – Required for chatbot functionality.
+Login Secret – Used to manage user sessions securely (stored in .env.local).
