@@ -15,6 +15,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
   height: 800px; /* Set a fixed height for the chatbot container */
+  cursor: default;
 }
 
 
@@ -26,7 +27,7 @@
   font-weight: bold;
   text-transform: uppercase; 
   letter-spacing: 8px; 
-
+  cursor: default;
   /* font-family: 'Courier New', Courier, monospace;  */
 }
 
