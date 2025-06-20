@@ -5,13 +5,12 @@
   justify-content: center;
   align-items: flex-start;
   padding: 10px 20px;
-  /* gap: 15px; */
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
-  backdrop-filter: blur(10px);           /* The "glass" blur effect */
-  -webkit-backdrop-filter: blur(10px);   /* Safari support */
-  border-radius: 20px;                   /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px);         
+  -webkit-backdrop-filter: blur(10px);   
+  border-radius: 20px;                   
+  border: 1px solid rgba(255, 255, 255, 0.2); 
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   height: 380px; 
 }
@@ -32,7 +31,7 @@
   text-transform: uppercase; 
   letter-spacing: 8px; 
   margin-bottom: 5px;
-  padding: 10px 0; /* Add padding for better spacing */
+  padding: 10px 0; 
   
 }
 
@@ -41,7 +40,7 @@
   justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
-  padding: 10px 0; /* Add padding for better spacing */
+  padding: 10px 0;
 }
 
 .language-button {
@@ -77,17 +76,17 @@
 }
 
 .dictionary-input {
-  flex: 1; /* Allow the input box to take up available space */
-  font-size: 16px; /* Ensure consistent font size */
-  padding: 10px 20px; /* Add padding for better usability */
-  outline: none; /* Remove default focus outline */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
-  backdrop-filter: blur(10px);           /* The "glass" blur effect */
-  -webkit-backdrop-filter: blur(10px);   /* Safari support */
-  border-radius: 20px;                   /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  flex: 1; 
+  font-size: 16px; 
+  padding: 10px 20px; 
+  outline: none; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  background: rgba(255, 255, 255, 0.1);  
+  backdrop-filter: blur(10px);           
+  -webkit-backdrop-filter: blur(10px);   
+  border-radius: 20px;                   
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
 }
 
 .dictionary-input:focus {
@@ -95,19 +94,19 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 .dictionary-submit{
-  font-size: 16px; /* Ensure consistent font size */
-  padding: 10px 20px; /* Add padding for better usability */
+  font-size: 16px; 
+  padding: 10px 20px; 
   background: rgba(94, 15, 40, 0.5);
-  color: #ffffff; /* Button text color */
-  border: none; /* Remove default border */
-  border-radius: 20px; /* Match the input box's border radius */
-  cursor: pointer; /* Add pointer cursor */
-  transition: all 0.3s ease; /* Smooth hover effect */
+  color: #ffffff; 
+  border: none; 
+  border-radius: 20px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
 }
 
 .dictionary-submit:disabled {
   background: rgba(255, 255, 255, 0.1);
-  cursor: not-allowed; /* Show not-allowed cursor */
+  cursor: not-allowed; 
   color: #240404;
 }
 
@@ -117,8 +116,8 @@
 }
 
 .dictionary-reset {
-  width: 150px; /* Make buttons the same width */
-  padding: 10px 20px; /* Adjust padding for consistency */
+  width: 150px; 
+  padding: 10px 20px; 
   font-size: 16px;
   border-radius: 20px;
   cursor: pointer;
@@ -148,17 +147,17 @@
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.5);  /* Semi-transparent white */
-  backdrop-filter: blur(10px);           /* The "glass" blur effect */
-  -webkit-backdrop-filter: blur(10px);   /* Safari support */
-  border-radius: 20px;                   /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  background: rgba(255, 255, 255, 0.5);  
+  backdrop-filter: blur(10px);           
+  -webkit-backdrop-filter: blur(10px);   
+  border-radius: 20px;                  
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
   padding: 3px 20px; 
   font-size: 16px; 
   line-height: 1.8; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  border: 1px solid #ede8e8; /* Fixed border property */
+  border: 1px solid #ede8e8; 
   width: 100%;
   max-height: 150px;
   overflow-y: auto;
@@ -172,13 +171,12 @@
 .dictionary-result::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 15px;
-  margin-top: 10px;    /* This works in some browsers (Chrome/Edge) */
-  margin-bottom: 10px; /* This works in some browsers (Chrome/Edge) */
+  margin-top: 10px;    
+  margin-bottom: 10px; 
 }
 .dictionary-result::-webkit-scrollbar-thumb {
   background: rgba(194, 152, 152, 0.3);
   border-radius: 15px;
-  /* border: 2px solid rgba(255,255,255,0.3); */
 }
 
 .dictionary-result::-webkit-scrollbar-thumb:hover {
