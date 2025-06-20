@@ -6,28 +6,28 @@ body {
   min-height: 100vh;
   cursor: default;
 }
-/* Page container */
+
 .login-page {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Login container */
+
 .login-container {
-  max-width: 400px; /* Smaller width for login form */
+  max-width: 400px; 
   margin: 0 auto;
   padding: 30px;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; /* White background */
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Space between form elements */
-  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
-  backdrop-filter: blur(10px);           /* The "glass" blur effect */
-  -webkit-backdrop-filter: blur(10px);   /* Safari support */
-  border-radius: 15px;                   /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  gap: 20px; 
+  background: rgba(255, 255, 255, 0.1);  
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px);   
+  border-radius: 15px;                   
+  border: 1px solid rgba(255, 255, 255, 0.2); 
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -39,19 +39,19 @@ body {
   font-weight: bold;
   text-transform: uppercase; 
   letter-spacing: 8px; 
-  margin: 40px 0; /* Add margin for spacing */
+  margin: 40px 0; 
 }
 
 
 
-/* Form */
+
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Space between fields */
+  gap: 15px; 
 }
 
-/* Input fields */
+
 .login-field {
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@ body {
 
 .login-label {
   font-size: 16px;
-  color: #333333; /* Dark gray text */
+  color: #333333; 
   margin-bottom: 5px;
   font-weight: 500;
 }
@@ -78,7 +78,7 @@ body {
 }
 
 .login-input::placeholder {
-  color: #888888; /* Medium gray placeholder */
+  color: #888888; 
 }
 
 .login-input:focus {
@@ -87,20 +87,20 @@ body {
 }
 
 .login-submit-button {
-  font-size: 16px; /* Ensure consistent font size */
-  padding: 10px 20px; /* Add padding for better usability */
+  font-size: 16px; 
+  padding: 10px 20px; 
   background: rgba(94, 15, 40, 0.5);
-  color: #ffffff; /* Button text color */
-  border: none; /* Remove default border */
-  border-radius: 20px; /* Match the input box's border radius */
-  cursor: pointer; /* Add pointer cursor */
-  transition: all 0.3s ease; /* Smooth hover effect */
+  color: #ffffff; 
+  border: none; 
+  border-radius: 20px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
 }
 
 
 .login-submit-button:disabled {
   background: rgba(255, 255, 255, 0.1);
-  cursor: not-allowed; /* Show not-allowed cursor */
+  cursor: not-allowed; 
   color: #240404;
 }
 

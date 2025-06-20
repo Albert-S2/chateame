@@ -24,7 +24,7 @@ export default function LoginForm() {
             alert('Invalid username or password');
         }
     };
-    
+    // login form 
     return (
         <div className="login-page">
             <div className="login-container">
@@ -53,11 +53,11 @@ export default function LoginForm() {
                         />
                     </div>
                     <button
-                      type="submit"
-                      className="login-submit-button"
-                      disabled={!myName || !password} // or whatever your validation is
+                        type="submit"
+                        className="login-submit-button"
+                        disabled={!myName || !password}
                     >
-                      Login
+                        Login
                     </button>
                 </form>
             </div>

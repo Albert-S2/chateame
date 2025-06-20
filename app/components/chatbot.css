@@ -7,14 +7,14 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  overflow: hidden; /* Prevent content from overflowing */
-  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
-  backdrop-filter: blur(10px);           /* The "glass" blur effect */
-  -webkit-backdrop-filter: blur(10px);   /* Safari support */
-  border-radius: 20px;                   /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
-  height: 800px; /* Set a fixed height for the chatbot container */
+  overflow: hidden; 
+  background: rgba(255, 255, 255, 0.1);  
+  backdrop-filter: blur(10px);           
+  -webkit-backdrop-filter: blur(10px);   
+  border-radius: 20px;                  
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+  height: 800px; 
   cursor: default;
 }
 
@@ -28,7 +28,6 @@
   text-transform: uppercase; 
   letter-spacing: 8px; 
   cursor: default;
-  /* font-family: 'Courier New', Courier, monospace;  */
 }
 
 .level-selection {
@@ -65,17 +64,17 @@
   flex: 1;
   min-height: 20vh;
   max-height: 90vh;
-  overflow-y: auto; /* Allow scrolling for messages */
+  overflow-y: auto; 
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
-  backdrop-filter: blur(10px);           /* The "glass" blur effect */
+  background: rgba(255, 255, 255, 0.1);  
+  backdrop-filter: blur(10px);         
   -webkit-backdrop-filter: blur(10px);   /* Safari support */
-  border-radius: 20px;                   /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  border-radius: 20px;                  
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
 }
 
 
@@ -91,8 +90,8 @@
 }
 
 .chatbot-message-user {
-  background: rgba(94, 15, 40, 0.5); /* Semi-transparent white */
-  backdrop-filter: blur(10px);           /* The "glass" blur effect */  /* Safari support */
+  background: rgba(94, 15, 40, 0.5); 
+  backdrop-filter: blur(10px);          
   align-self: flex-end;
   color: #ffffff; 
 }
@@ -103,8 +102,8 @@
   color: #240404; 
   align-items: flex-start;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.5);  /* Semi-transparent white */
-  backdrop-filter: blur(10px);           /* The "glass" blur effect */ /* Safari support */                 /* Rounded corners */
+  background: rgba(255, 255, 255, 0.5);  
+  backdrop-filter: blur(10px);                          
 }
 
 .chatbot-loading {
@@ -117,44 +116,43 @@
 
 .chatbot-form {
   display: flex;
-  align-items: center; /* Align input and button vertically */
-  gap: 10px; /* Add spacing between input and button */
+  align-items: center; 
+  gap: 10px; 
 }
 
 .chatbot-input {
-  flex: 1; /* Allow the input box to take up available space */
-  font-size: 16px; /* Ensure consistent font size */
-  padding: 10px 20px; /* Add padding for better usability */
-  outline: none; /* Remove default focus outline */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
-  backdrop-filter: blur(10px);           /* The "glass" blur effect */
-  -webkit-backdrop-filter: blur(10px);   /* Safari support */
-  border-radius: 20px;                   /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  flex: 1; 
+  font-size: 16px; 
+  padding: 10px 20px; 
+  outline: none; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  background: rgba(255, 255, 255, 0.1);  
+  backdrop-filter: blur(10px);         
+  -webkit-backdrop-filter: blur(10px);   
+  border-radius: 20px;                   
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
 }
 
 .chatbot-input:focus {
-  /* border: 1px solid rgba(176, 9, 62, 0.5); */
   outline: none;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .chatbot-submit-button {
-  font-size: 16px; /* Ensure consistent font size */
-  padding: 10px 20px; /* Add padding for better usability */
+  font-size: 16px;
+  padding: 10px 20px; 
   background: rgba(94, 15, 40, 0.5);
-  color: #ffffff; /* Button text color */
-  border: none; /* Remove default border */
-  border-radius: 20px; /* Match the input box's border radius */
-  cursor: pointer; /* Add pointer cursor */
-  transition: all 0.3s ease; /* Smooth hover effect */
+  color: #ffffff; 
+  border: none; 
+  border-radius: 20px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
 }
 
 .chatbot-submit-button:disabled {
   background: rgba(255, 255, 255, 0.1);
-  cursor: not-allowed; /* Show not-allowed cursor */
+  cursor: not-allowed; 
   color: #240404;
 }
 
@@ -165,15 +163,15 @@
 
 .chatbot-buttons {
   display: flex;
-  flex-direction: row; /* Arrange buttons horizontally */
-  justify-content: center; /* Center buttons horizontally */
-  gap: 15px; /* Add space between buttons */
+  flex-direction: row; 
+  justify-content: center; 
+  gap: 15px; 
 }
 
 .chatbot-reset-button,
 .chatbot-logout-button {
-  width: 150px; /* Make buttons the same width */
-  padding: 10px 20px; /* Adjust padding for consistency */
+  width: 150px; 
+  padding: 10px 20px; 
   font-size: 16px;
   border-radius: 20px;
   cursor: pointer;
@@ -212,13 +210,12 @@
 .chatbot-messages::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 15px;
-  margin-top: 10px;    /* This works in some browsers (Chrome/Edge) */
-  margin-bottom: 10px; /* This works in some browsers (Chrome/Edge) */
+  margin-top: 10px;    
+  margin-bottom: 10px; 
 }
 .chatbot-messages::-webkit-scrollbar-thumb {
   background: rgba(243, 243, 243, 0.3);
   border-radius: 15px;
-  /* border: 2px solid rgba(255,255,255,0.3); */
 }
 
 .chatbot-messages::-webkit-scrollbar-thumb:hover {
