@@ -182,3 +182,56 @@
 .dictionary-result::-webkit-scrollbar-thumb:hover {
   background: rgba(243, 243, 243, 0.7);
 }
+
+@media (max-width: 430px) {
+  .dictionary-outer-container {
+    padding: 8px 0;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  .dictionary-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height: 700px;
+  }
+  .dictionary-form {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+  align-items: center;
+  width: 98%;
+  margin: 2%;
+}
+  .dictionary-result-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 98%;
+    margin: 1%;
+  }
+  .dictionary-result {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  .dictionary-input {
+  flex: 1; 
+  font-size: 16px; 
+  padding: 10px 20px; 
+  width: 50%;
+  }
+  .dictionary-form {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .dictionary-submit,
+  .dictionary-reset {
+    width: 100%;
+    margin: 0;
+  }
+}
