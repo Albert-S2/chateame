@@ -49,7 +49,7 @@ export default function ChatPage() {
               className="mobile-close"
               onClick={() => setShowDictionary(false)}
             >
-              Cerrar
+              X
             </button>
             <Dictionary />
           </div>
@@ -60,7 +60,7 @@ export default function ChatPage() {
               className="mobile-close"
               onClick={() => setShowTopic(false)}
             >
-              Cerrar
+              X
             </button>
             <Topic />
           </div>

@@ -26,7 +26,7 @@
 .topic-title {
   text-align: center;
   font-size: 20px; 
-  color: #333333; 
+  color: #240404; 
   margin-bottom: 5px;
   font-weight: bold;
   text-transform: uppercase; 
@@ -95,7 +95,7 @@
   border-radius: 20px;
   cursor: pointer;
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   background: rgba(255, 255, 255, 0.1);
   color: #240404;
   border: none;
@@ -148,4 +148,88 @@
   color: #240404; 
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; 
   font-size: 16px; 
+}
+@media (max-width: 430px) {
+  .topic-outer-container {
+    padding: 8px 0;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 20px 0px 0px 0px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-style: none;
+  }
+  .topic-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  .topic-title {
+    color: #ffffff;
+  }
+  .topic-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: stretch;
+    width: 94%;
+    margin: 3%;
+    margin-bottom: 10px;
+  }
+  .topic-input {
+    flex: 1;
+    font-size: 16px;
+    padding: 10px 20px;
+    min-width: 94%;
+    color: #ffffff;
+    background: rgba(95, 90, 90, 0.4);
+    border-style: none;
+    border-radius: 20px;
+  }
+  .topic-input:focus {
+    outline: none;
+    box-shadow: 0 4px 30px rgba(7, 7, 7, 0.9);
+  }
+  .topic-submit,
+  .topic-reset {
+    width: 48%;
+    margin: 0;
+    color: #ffffff;
+    /* background: rgba(94, 15, 40, 0.5); */
+    /* border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: all 0.3s ease; */
+  }
+  .topic-submit:disabled {
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+  }
+  .topic-result-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 94%;
+    margin: 3%;
+  }
+  .topic-result {
+    max-height: 500px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000000;
+    border-radius: 15px;
+    border: 1px solid #ede8e8;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    padding: 3px 20px;
+    font-size: 16px;
+    line-height: 1.8;
+    width: 100%;
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  }
 }
