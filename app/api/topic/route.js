@@ -17,7 +17,7 @@ export async function POST(req) {
 
     const topicMessage = {
       role: "system",
-      content: `When a topic is given, give 5 Spanish words that could be used to make this topic more fluent. The topic is: "${topic}". Provide the words in a line format, like this - each wor and translation from new line (eg): 
+      content: `Given the topic: '${topic}', provide 5 Spanish words useful for discussing this topic fluently. List each word on a new line with its English translation in the format: 
       
       word1Spanish   →   word1English 
       word2Spanish   →   word2English 
@@ -25,7 +25,7 @@ export async function POST(req) {
       word4Spanish   →   word4English
       word5Spanish   →   word5English
       
-      If the topic is not found, respond with "Topic not found." Never write a sentence, always as short an answer as possible.`,
+      If the topic is not found, respond with 'Topic not found.' Provide only the list—no sentences or extra text.`,
     };
 
     const topicCompletion = await openai.chat.completions.create({
