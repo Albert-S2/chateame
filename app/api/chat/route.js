@@ -32,7 +32,7 @@ export async function POST(req) {
     // First role: Correct the user's sentence
     const correctionSystemMessage = {
       role: "system",
-      content: "You are a Spanish grammar expert. Correct the following sentence using proper Spanish. Respond with only the corrected sentence — do not add explanations or extra text.",
+      content: `You are a Spanish grammar expert. Correct the following sentence using proper Spanish. Respond with only the corrected sentence — do not add explanations or extra text.`,
     };
 
     const correctionCompletion = await openai.chat.completions.create({
@@ -56,7 +56,7 @@ export async function POST(req) {
     // Second role: Provide a conversational response
     const conversationSystemMessage = {
       role: "system",
-      content: `You are a friendly young adult from Spain who enjoys casual online conversations. Respond like a real person your age would—natural, engaging, and informal. Tailor your language to match a Spanish learner at the ${level} level. Keep responses brief and under 400 characters.`,
+      content: `You are a friendly young adult from Spain who enjoys casual online conversations. Respond like a real person your age would—natural, engaging, and informal. Tailor your language to match a Spanish learner at the '${level}' level. Keep responses brief and under 400 characters.`,
     };
 
     const conversationCompletion = await openai.chat.completions.create({
