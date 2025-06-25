@@ -31,7 +31,7 @@ export async function POST(req) {
 
         const dictionaryMessage = {
             role: "system",
-            content: `Provide strict translation of word "${word}" in ${leng} (don't forget article etc). It should reminds of language dictionary translation. If the word is mis-spelt, re-write in correct spelling and then translate. If the word is not found, respond with "Word not found." Never write the sentence, always as short answer as possible.`,
+            content: `Translate the word '${word}' into ${leng} with strict dictionary accuracy. Include the article if applicable. If the word cannot be found, reply with: 'Word not found.' Provide only the translation — no full sentences or extra explanation.`,
         };
 
         const dictionaryComplition = await openai.chat.completions.create({
