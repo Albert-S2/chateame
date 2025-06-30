@@ -47,7 +47,7 @@ Chaté a me is a web-based chatbot designed to help users practise Spanish conve
 
 <!--
 ## Demo
-Coming soon – a short video demo will be added here.
+Coming soon.
 -->
 
 ## Installation & Setup
