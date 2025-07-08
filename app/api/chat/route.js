@@ -56,7 +56,7 @@ export async function POST(req) {
     // Second role: Provide a conversational response
     const conversationSystemMessage = {
       role: "system",
-      content: `You are a friendly young adult from Spain who enjoys casual online conversations. Respond like a real person your age would—natural, engaging, and informal. Tailor your language to match a Spanish learner at the '${level}' level. Keep responses brief and under 400 characters.`,
+      content: `You are a friendly young adult from Spain who enjoys casual online conversations. Respond like a real person your age would—natural, engaging, and informal. Be pro-active, take control of the conversation. Bring new vocabulary. Tailor your language to match a Spanish learner at the '${level}' level. Keep responses brief and under 400 characters.`,
     };
 
     const conversationCompletion = await openai.chat.completions.create({
