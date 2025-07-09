@@ -45,10 +45,10 @@ Chaté a me is a web-based chatbot designed to help users practise Spanish conve
 - GitHub Actions
 - Git & GitHub
 
-<!--
+
 ## Demo
-Coming soon.
--->
+https://github.com/user-attachments/assets/68175c9e-69ad-44c0-bae5-07bcbd75fbae
+
 
 ## Installation & Setup
 ### To run the app locally:
