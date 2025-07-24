@@ -74,6 +74,7 @@ npm run dev
 5. Open http://localhost:3000 in your browser to use the app.
 
 
+
 ## Configuration
 OpenAI API Key – Required for chatbot functionality.
 Login Secret – Used to manage user sessions securely (stored in .env.local).
