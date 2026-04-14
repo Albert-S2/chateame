@@ -77,3 +77,7 @@ npm run dev
 ## Configuration
 OpenAI API Key – Required for chatbot functionality.
 Login Secret – Used to manage user sessions securely (stored in .env.local).
+
+
+## Deployment
+Vercel – Fully compatible with Vercel for seamless hosting and deployment.
